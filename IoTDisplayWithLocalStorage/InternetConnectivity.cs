@@ -12,8 +12,10 @@ namespace IoTDisplayWithLocalStorage
         public static bool IsConnected()
         {
             ConnectionProfile connections = NetworkInformation.GetInternetConnectionProfile();
-            bool internet = connections != null && connections.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
-            return internet;
+
+            return 
+                connections != null 
+                && connections.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
         }
     }
     

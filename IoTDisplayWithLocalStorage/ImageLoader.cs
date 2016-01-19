@@ -27,6 +27,10 @@ namespace IoTDisplayWithLocalStorage
             return new SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), dbPath);
         }
 
+        /// <summary>
+        /// Return next image from database
+        /// </summary>
+        /// <returns></returns>
         public byte[] GetNextImage()
         {
             try
@@ -73,6 +77,11 @@ namespace IoTDisplayWithLocalStorage
             }
         }
 
+        /// <summary>
+        /// Download and store images to local database
+        /// </summary>
+        /// <param name="images"></param>
+        /// <returns></returns>
         public async Task StoreImages(IEnumerable<string> images)
         {
             if(_isWritingImages)

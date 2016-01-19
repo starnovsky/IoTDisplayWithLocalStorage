@@ -9,8 +9,15 @@ namespace IoTDisplayWithLocalStorage
 {
     public class StoredImage
     {
+        /// <summary>
+        /// Image ID
+        /// </summary>
         [PrimaryKey, AutoIncrement]
         public int ImageID { get; set; }
+
+        /// <summary>
+        /// Image itself as BLOB
+        /// </summary>
         public byte[] Image { get; set; }
     }
 }
